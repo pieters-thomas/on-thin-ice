@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+    <style>
+        .example-wrapper {
+            margin: 1em auto;
+            max-width: 800px;
+            width: 95%;
+            font: 18px/1.5 sans-serif;
+        }
+
+        .example-wrapper code {
+            background: #F5F5F5;
+            padding: 2px 6px;
+        }
+    </style>
+
+    {% if role is same as('host') %}
+        <form method="post" action="{{ path('lobby_setup') }}">
+            <label>
+                <input type="text" name="playerName" required placeholder="enter a name">
+            </label>
+            <button class="btn">Start a new game session</button>
+        </form>
+    {% else %}
+        <form method="post" action="{{ path('lobby_join') }}">
+            <label>
+                <input type="text" name="playerName" required placeholder="enter a name">
+            </label>
+            <input type="hidden" value="{{ id }}">
+            <button class="btn">Join game session</button>
+        </form>
+    {% endif %}
+
+{% endblock %}

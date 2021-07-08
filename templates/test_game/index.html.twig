@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello TestGameController!{% endblock %}
+
+{% block stylesheets %}
+    <link href="{{ asset('styling/game.css') }}" rel="stylesheet"/>
+    <link href='https://fonts.googleapis.com/css?family=Raleway:300' rel='stylesheet' type='text/css'>
+{% endblock %}
+
+{% block body %}
+
+    <svg id="board" xmlns="http://www.w3.org/2000/svg" {# onload="makeDraggable(event)" #} ></svg>
+
+{% endblock %}
+
+{% block javascripts %}
+
+    <script src="{{ asset('scripts/DrawHexes.js') }}"></script>
+
+{% endblock %}

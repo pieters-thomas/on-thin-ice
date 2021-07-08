@@ -1,0 +1,30 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+index:
+  path: /
+  controller: App\Controller\HomeController::index
+
+join:
+  path: /join/{id}
+  controller: App\Controller\HomeController::guest
+
+lobby_setup:
+  path: /lobby_setup
+  controller: App\Controller\LobbyController::setup
+  methods: POST
+
+lobby_join:
+  path: /lobby_join
+  controller: App\Controller\LobbyController::join
+  methods: POST
+
+lobby:
+  path: /lobby
+  controller: App\Controller\LobbyController::index
+
+
+
+
+
+
